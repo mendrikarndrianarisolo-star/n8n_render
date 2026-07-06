@@ -1,0 +1,15 @@
+FROM n8nio/n8n:1.97.1
+
+ENV N8N_BASIC_AUTH_ACTIVE=false
+ENV N8N_PORT=10000
+ENV N8N_HOST=0.0.0.0
+ENV N8N_PROTOCOL=https
+ENV GENERIC_TIMEZONE=Europe/Paris
+
+# SQLite (stable, pas de connexion externe)
+ENV DB_TYPE=sqlite
+ENV DB_SQLITE_VACUUM_ON_STARTUP=true
+
+EXPOSE 10000
+
+CMD ["n8n", "start"]
